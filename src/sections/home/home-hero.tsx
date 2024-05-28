@@ -10,7 +10,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 
-import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { useResponsive } from 'src/hooks/use-responsive';
@@ -233,7 +232,7 @@ export default function HomeHero() {
           <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'column' }} sx={{ my: 5 }}>
             <Button
               component={RouterLink}
-              href={paths.dashboard.root}
+              href="https://wa.me/5585992704305?text=Olá, estou entrando em contato através do seu portfolio."
               color="inherit"
               size="large"
               variant="contained"
