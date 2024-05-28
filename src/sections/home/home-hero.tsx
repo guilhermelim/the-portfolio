@@ -300,14 +300,18 @@ export default function HomeHero() {
             'skill-icons:git',
             'skill-icons:aws-dark',
             'skill-icons:linux-dark',
-          ].map((icon) => {
+          ].map((icon, index) => {
             // Verificar se 'icon' é um objeto para aplicar uma cor personalizada
             const iconProps =
               typeof icon === 'object'
                 ? { icon: icon.icon, color: icon.color, width: 24 }
                 : { icon, width: 24 };
 
-            return <Iconify key={icon} {...iconProps} />;
+            return (
+              <Box key={index}>
+                <Iconify {...iconProps} />
+              </Box>
+            );
           })}
 
           {/* {['js', 'ts', 'figma', 'nextjs', 'vite'].map((icon) => (
