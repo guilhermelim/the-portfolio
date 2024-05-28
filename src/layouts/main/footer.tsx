@@ -62,9 +62,9 @@ export default function Footer() {
         <Logo sx={{ mb: 1, mx: 'auto' }} />
 
         <Typography variant="caption" component="div">
-          © All rights reserved
-          <br /> made by
-          <Link href="https://minimals.cc/"> minimals.cc </Link>
+          © Todos os direitos reservados
+          <br /> Desenvolvido com amor por
+          <Link href="https://genap.com.br/"> genap.com.br </Link>
         </Typography>
       </Container>
     </Box>

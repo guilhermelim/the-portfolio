@@ -41,13 +41,17 @@ export default function JwtLoginView() {
   const password = useBoolean();
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().required('Email is required').email('Email must be a valid email address'),
-    password: Yup.string().required('Password is required'),
+    email: Yup.string()
+      .required('O email é obrigatório')
+      .email('O email deve ser um endereço de email válido'),
+    password: Yup.string().required('A senha é obrigatória'),
   });
 
   const defaultValues = {
-    email: 'demo@minimals.cc',
-    password: 'demo1234',
+    // email: 'demo@minimals.cc',
+    // password: 'demo1234',
+    email: '',
+    password: '',
   };
 
   const methods = useForm({
@@ -75,13 +79,13 @@ export default function JwtLoginView() {
 
   const renderHead = (
     <Stack spacing={2} sx={{ mb: 5 }}>
-      <Typography variant="h4">Sign in to Minimal</Typography>
+      <Typography variant="h4">Faça login na GENAP APP</Typography>
 
       <Stack direction="row" spacing={0.5}>
-        <Typography variant="body2">New user?</Typography>
+        <Typography variant="body2">Novo Usuário?</Typography>
 
         <Link component={RouterLink} href={paths.auth.jwt.register} variant="subtitle2">
-          Create an account
+          Criar nova conta
         </Link>
       </Stack>
     </Stack>
@@ -89,11 +93,11 @@ export default function JwtLoginView() {
 
   const renderForm = (
     <Stack spacing={2.5}>
-      <RHFTextField name="email" label="Email address" />
+      <RHFTextField name="email" label="Email" />
 
       <RHFTextField
         name="password"
-        label="Password"
+        label="Senha"
         type={password.value ? 'text' : 'password'}
         InputProps={{
           endAdornment: (
@@ -107,7 +111,7 @@ export default function JwtLoginView() {
       />
 
       <Link variant="body2" color="inherit" underline="always" sx={{ alignSelf: 'flex-end' }}>
-        Forgot password?
+        Esqueceu sua senha?
       </Link>
 
       <LoadingButton
@@ -118,7 +122,7 @@ export default function JwtLoginView() {
         variant="contained"
         loading={isSubmitting}
       >
-        Login
+        Entrar
       </LoadingButton>
     </Stack>
   );
@@ -127,9 +131,9 @@ export default function JwtLoginView() {
     <>
       {renderHead}
 
-      <Alert severity="info" sx={{ mb: 3 }}>
+      {/* <Alert severity="info" sx={{ mb: 3 }}>
         Use email : <strong>demo@minimals.cc</strong> / password :<strong> demo1234</strong>
-      </Alert>
+      </Alert> */}
 
       {!!errorMsg && (
         <Alert severity="error" sx={{ mb: 3 }}>

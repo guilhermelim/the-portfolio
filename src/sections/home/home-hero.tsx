@@ -4,7 +4,6 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import Rating from '@mui/material/Rating';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -169,10 +168,9 @@ export default function HomeHero() {
   const hide = percent > 120;
 
   const renderDescription = (
-    <Stack
-      alignItems="center"
-      justifyContent="center"
+    <Box
       sx={{
+        pt: 20,
         height: 1,
         mx: 'auto',
         maxWidth: 480,
@@ -182,40 +180,36 @@ export default function HomeHero() {
         },
       }}
     >
-      <m.div variants={varFade().in}>
-        <Typography
-          variant="h2"
-          sx={{
-            textAlign: 'center',
-          }}
-        >
-          Start a <br />
-          New Project with
-        </Typography>
-      </m.div>
+      <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
+        <m.div variants={varFade().in}>
+          <Typography variant="body2">Oi, meu nome é</Typography>
+        </m.div>
+      </Stack>
 
-      <m.div variants={varFade().in}>
-        <StyledTextGradient
-          animate={{ backgroundPosition: '200% center' }}
-          transition={{
-            repeatType: 'reverse',
-            ease: 'linear',
-            duration: 20,
-            repeat: Infinity,
-          }}
-        >
-          Minimal
-        </StyledTextGradient>
-      </m.div>
+      <Stack alignItems="center" justifyContent="center">
+        <m.div variants={varFade().in}>
+          <StyledTextGradient
+            animate={{ backgroundPosition: '200% center' }}
+            transition={{
+              repeatType: 'reverse',
+              ease: 'linear',
+              duration: 20,
+              repeat: Infinity,
+            }}
+          >
+            Guilherme Lima
+          </StyledTextGradient>
+        </m.div>
 
-      <m.div variants={varFade().in}>
-        <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          The starting point for your next project is based on MUI.Easy customization Helps you
-          build apps faster and better.
-        </Typography>
-      </m.div>
+        <m.div variants={varFade().in}>
+          <Typography variant="body2" sx={{ textAlign: 'center' }}>
+            <strong>Desenvolvedor Full Stack</strong>, com experiência em aplicações web com{' '}
+            <strong>React.js</strong> e <strong>Next.js</strong> com <strong>TypeScript</strong> e{' '}
+            <strong>MUI</strong> e <strong>Design de UI/UX</strong>.
+          </Typography>
+        </m.div>
 
-      <m.div variants={varFade().in}>
+        {/* <m.div variants={varFade().in}>
         <Stack
           spacing={0.75}
           direction="row"
@@ -231,20 +225,21 @@ export default function HomeHero() {
             (99+ reviews)
           </Typography>
         </Stack>
-      </m.div>
+      </m.div> */}
+      </Stack>
 
       <m.div variants={varFade().in}>
-        <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
-          <Stack alignItems="center" spacing={2}>
+        <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
+          <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'column' }} sx={{ my: 5 }}>
             <Button
               component={RouterLink}
               href={paths.dashboard.root}
               color="inherit"
               size="large"
               variant="contained"
-              startIcon={<Iconify icon="eva:flash-fill" width={24} />}
+              startIcon={<Iconify icon="ic:baseline-whatsapp" width={24} />}
             >
-              Live Preview
+              Fale comigo agora!
             </Button>
 
             <Link
@@ -252,7 +247,7 @@ export default function HomeHero() {
               variant="caption"
               target="_blank"
               rel="noopener"
-              href={paths.freeUI}
+              href=""
               sx={{
                 textDecoration: 'underline',
                 display: 'inline-flex',
@@ -260,11 +255,11 @@ export default function HomeHero() {
               }}
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
-              Get Free Version
+              Atualmente disponível para trabalho e freelance
             </Link>
-          </Stack>
+            <Stack alignItems="center" spacing={2} />
 
-          <Button
+            {/* <Button
             color="inherit"
             size="large"
             variant="outlined"
@@ -275,19 +270,47 @@ export default function HomeHero() {
             sx={{ borderColor: 'text.primary' }}
           >
             Design Preview
-          </Button>
+          </Button> */}
+          </Stack>
         </Stack>
       </m.div>
 
       <Stack spacing={3} sx={{ textAlign: 'center' }}>
         <m.div variants={varFade().in}>
           <Typography variant="overline" sx={{ opacity: 0.48 }}>
-            Available For
+            MINHAS SKILLS E POWER UP’S
           </Typography>
         </m.div>
 
         <Stack spacing={2} direction="row" justifyContent="center">
-          {['js', 'ts', 'figma', 'nextjs', 'vite'].map((icon) => (
+          {[
+            'devicon:html5',
+            'vscode-icons:file-type-css',
+            'skill-icons:sass',
+            'logos:javascript',
+            'devicon:typescript',
+            'devicon:csharp',
+            'logos:nodejs-icon',
+            'logos:react',
+            'file-icons:nextjs',
+            { icon: 'simple-icons:mui', color: '#3399ff' },
+            { icon: 'solar:database-bold', color: 'yellow' },
+            'skill-icons:wordpress',
+            'skill-icons:docker',
+            'skill-icons:git',
+            'skill-icons:aws-dark',
+            'skill-icons:linux-dark',
+          ].map((icon) => {
+            // Verificar se 'icon' é um objeto para aplicar uma cor personalizada
+            const iconProps =
+              typeof icon === 'object'
+                ? { icon: icon.icon, color: icon.color, width: 24 }
+                : { icon, width: 24 };
+
+            return <Iconify key={icon} {...iconProps} />;
+          })}
+
+          {/* {['js', 'ts', 'figma', 'nextjs', 'vite'].map((icon) => (
             <m.div key={icon} variants={varFade().in}>
               <Box
                 component="img"
@@ -296,10 +319,10 @@ export default function HomeHero() {
                 sx={{ width: 24, height: 24 }}
               />
             </m.div>
-          ))}
+          ))} */}
         </Stack>
       </Stack>
-    </Stack>
+    </Box>
   );
 
   const renderSlides = (

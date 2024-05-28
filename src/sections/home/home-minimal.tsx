@@ -13,20 +13,22 @@ import { varFade, MotionViewport } from 'src/components/animate';
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Branding',
-    description: 'Consistent design makes it easy to brand your own.',
+    icon: '/assets/icons/home/ic_make_brand.svg',
+    title: 'Gerenciamento de Projetos & Consultoria',
+    description:
+      'Oferecemos gerenciamento de projetos e consultoria especializada para garantir que suas iniciativas de TI sejam implementadas com eficiência e alinhadas às melhores práticas do mercado. Nossa abordagem foca em resultados, buscando maximizar o retorno sobre o investimento e minimizar riscos.',
   },
   {
-    icon: ' /assets/icons/home/ic_design.svg',
+    icon: '/assets/icons/home/ic_design.svg',
     title: 'UI & UX Design',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'Criamos experiências digitais cativantes e intuitivas. Nosso trabalho em UI & UX Design foca em entender as necessidades dos usuários para desenvolver interfaces que não apenas pareçam excelentes, mas que também sejam fáceis de usar, melhorando a interação com o produto e a satisfação do usuário.',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend, saving you time and money.',
+    icon: '/assets/icons/home/ic_development.svg',
+    title: 'Desenvolvimento Fullstack',
+    description:
+      'Desenvolvemos soluções completas, desde o back-end robusto até o front-end responsivo e interativo. Com habilidades em diversas tecnologias, nossa equipe fullstack é capaz de entregar projetos complexos e personalizados que atendem integralmente às necessidades do seu negócio.',
   },
 ];
 
@@ -49,13 +51,14 @@ export default function HomeMinimal() {
       >
         <m.div variants={varFade().inUp}>
           <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-            Minimal UI
+            Minhas Habilidades
           </Typography>
         </m.div>
 
         <m.div variants={varFade().inDown}>
           <Typography variant="h2">
-            What Minimal <br /> helps you?
+            Como eu posso
+            <br /> ajudar você?
           </Typography>
         </m.div>
       </Stack>
@@ -99,7 +102,9 @@ export default function HomeMinimal() {
                 {card.title}
               </Typography>
 
-              <Typography sx={{ color: 'text.secondary' }}>{card.description}</Typography>
+              <Typography sx={{ color: 'text.secondary', textAlign: 'justify' }}>
+                {card.description}
+              </Typography>
             </Card>
           </m.div>
         ))}

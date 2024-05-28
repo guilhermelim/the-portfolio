@@ -1,13 +1,11 @@
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import { Stack } from '@mui/system';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
-
-import { paths } from 'src/routes/paths';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
@@ -24,10 +22,15 @@ export default function HomeForDesigner() {
   const mdUp = useResponsive('up', 'md');
 
   const renderDescription = (
-    <Box sx={{ textAlign: { xs: 'center', md: 'unset' }, mt: { xs: 10, md: 20 } }}>
+    <Box
+      sx={{
+        textAlign: { xs: 'center', md: 'unset' },
+        mt: { xs: 10, md: 20 },
+      }}
+    >
       <m.div variants={varFade().inUp}>
         <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Professional Kit
+          Desenvolvemos
         </Typography>
       </m.div>
 
@@ -42,11 +45,30 @@ export default function HomeForDesigner() {
             ),
           }}
         >
-          For Designer
+          PROTOTIPAGEM
         </Typography>
+
+        <Typography>
+          Desenvolvimento de protótipos em baixa e alta fidelidade para validação de fluxo e
+          experiência do usuário.
+        </Typography>
+
+        <Stack
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+          spacing={2}
+          sx={{ py: 2 }}
+        >
+          {['skill-icons:figma-dark', 'logos:adobe-illustrator', 'logos:adobe-photoshop'].map(
+            (icon) => (
+              <Iconify key={icon} icon={icon} width={24} />
+            )
+          )}
+        </Stack>
       </m.div>
 
-      <m.div variants={varFade().inUp}>
+      {/* <m.div variants={varFade().inUp}>
         <Button
           color="inherit"
           size="large"
@@ -56,9 +78,9 @@ export default function HomeForDesigner() {
           rel="noopener"
           href={paths.figma}
         >
-          Figma Workspace
+          Designer no Figma
         </Button>
-      </m.div>
+      </m.div> */}
     </Box>
   );
 
