@@ -445,7 +445,7 @@ export default function HomeHero() {
                 {renderDescription}
               </Grid>
 
-              <Grid md={6}>
+              {/* <Grid md={6}>
                 <Stack
                   direction="row"
                   justifyContent="center"
@@ -489,7 +489,7 @@ export default function HomeHero() {
                     </svg>
                   </Box>
                 </Stack>
-              </Grid>
+              </Grid> */}
               {/* {mdUp && <Grid md={6}>{renderSlides}</Grid>} */}
             </Grid>
           </Container>
