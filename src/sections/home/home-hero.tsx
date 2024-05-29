@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-import { alpha, styled, useTheme } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 
@@ -126,11 +126,11 @@ const StyledPolygon = styled('div')<StyledPolygonProps>(
 export default function HomeHero() {
   const mdUp = useResponsive('up', 'md');
 
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const PRIMARY_MAIN = theme.palette.primary.main;
+  // const PRIMARY_MAIN = theme.palette.primary.main;
 
-  const PRIMARY_DARK = theme.palette.primary.dark;
+  // const PRIMARY_DARK = theme.palette.primary.dark;
 
   const heroRef = useRef<HTMLDivElement | null>(null);
 

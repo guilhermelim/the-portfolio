@@ -26,6 +26,7 @@ export default function SettingsDrawer() {
   const theme = useTheme();
 
   const settings = useSettingsContext();
+  console.log('settings: ', settings);
 
   const labelStyles = {
     mb: 1.5,
