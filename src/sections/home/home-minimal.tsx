@@ -14,21 +14,21 @@ import { varFade, MotionViewport } from 'src/components/animate';
 const CARDS = [
   {
     icon: '/assets/icons/home/ic_make_brand.svg',
-    title: 'Gerenciamento de Projetos & Consultoria',
+    title: 'Consultoria & Estratégia em TI',
     description:
-      'Oferecemos gerenciamento de projetos e consultoria especializada para garantir que suas iniciativas de TI sejam implementadas com eficiência e alinhadas às melhores práticas do mercado. Nossa abordagem foca em resultados, buscando maximizar o retorno sobre o investimento e minimizar riscos.',
+      'Ajudamos sua empresa a transformar ideias em resultados com planejamento estratégico, gestão de tecnologia e apoio na tomada de decisões digitais. Nossa consultoria foca em inovação, eficiência e crescimento sustentável.',
   },
   {
     icon: '/assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Design de Experiência & Interface',
     description:
-      'Criamos experiências digitais cativantes e intuitivas. Nosso trabalho em UI & UX Design foca em entender as necessidades dos usuários para desenvolver interfaces que não apenas pareçam excelentes, mas que também sejam fáceis de usar, melhorando a interação com o produto e a satisfação do usuário.',
+      'Projetamos experiências que encantam e convertem. Combinamos design visual moderno com usabilidade intuitiva para criar interfaces funcionais, acessíveis e centradas no usuário.',
   },
   {
     icon: '/assets/icons/home/ic_development.svg',
-    title: 'Desenvolvimento Fullstack',
+    title: 'Soluções Fullstack sob medida',
     description:
-      'Desenvolvemos soluções completas, desde o back-end robusto até o front-end responsivo e interativo. Com habilidades em diversas tecnologias, nossa equipe fullstack é capaz de entregar projetos complexos e personalizados que atendem integralmente às necessidades do seu negócio.',
+      'Desenvolvemos sistemas completos, seguros e escaláveis — da arquitetura back-end até a interface final. Utilizamos tecnologias modernas para atender com precisão as demandas do seu negócio.',
   },
 ];
 
@@ -51,14 +51,14 @@ export default function HomeMinimal() {
       >
         <m.div variants={varFade().inUp}>
           <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-            Minhas Habilidades
+            Nossas Especialidades
           </Typography>
         </m.div>
 
         <m.div variants={varFade().inDown}>
           <Typography variant="h2">
-            Como eu posso
-            <br /> ajudar você?
+            Como a GENAP pode
+            <br /> ajudar sua empresa?
           </Typography>
         </m.div>
       </Stack>

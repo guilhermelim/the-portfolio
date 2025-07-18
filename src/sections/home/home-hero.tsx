@@ -19,6 +19,7 @@ import { bgBlur, bgGradient, textGradient } from 'src/theme/css';
 
 import Iconify from 'src/components/iconify';
 import { varFade, MotionContainer } from 'src/components/animate';
+import Logo from 'src/components/logo';
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
@@ -184,11 +185,14 @@ export default function HomeHero() {
     >
       <Stack justifyContent="flex-start" alignItems="flex-start" spacing={2}>
         <m.div variants={varFade().in}>
-          <Typography variant="body2">Oi, meu nome é</Typography>
+          <Typography variant="body2">Bem-vindo à</Typography>
         </m.div>
       </Stack>
 
       <Stack alignItems="center" justifyContent="center">
+        <m.div variants={varFade().in}>
+          <Logo sx={{ width: 200, height: 200 }} />
+        </m.div>{' '}
         <m.div variants={varFade().in}>
           <StyledTextGradient
             animate={{ backgroundPosition: '200% center' }}
@@ -199,18 +203,16 @@ export default function HomeHero() {
               repeat: Infinity,
             }}
           >
-            Guilherme Lima
+            GENAP
           </StyledTextGradient>
         </m.div>
-
         <m.div variants={varFade().in}>
           <Typography variant="body2" sx={{ textAlign: 'center' }}>
-            <strong>Desenvolvedor Full Stack</strong>, com experiência em aplicações web com{' '}
-            <strong>React.js</strong> e <strong>Next.js</strong> com <strong>TypeScript</strong> e{' '}
-            <strong>MUI</strong> e <strong>Design de UI/UX</strong>.
+            Somos uma empresa especializada em soluções digitais personalizadas. Atuamos com{' '}
+            <strong>Desenvolvimento Web</strong>, <strong>Plataformas Corporativas</strong>,
+            <strong> Integrações com APIs</strong> e <strong>Consultoria em Tecnologia</strong>.
           </Typography>
         </m.div>
-
         {/* <m.div variants={varFade().in}>
         <Stack
           spacing={0.75}
@@ -241,7 +243,7 @@ export default function HomeHero() {
               variant="contained"
               startIcon={<Iconify icon="ic:baseline-whatsapp" width={24} />}
             >
-              Fale comigo agora!
+              Entre em contato
             </Button>
 
             <Link
@@ -257,7 +259,7 @@ export default function HomeHero() {
               }}
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
-              Atualmente disponível para trabalho e freelance
+              Soluções disponíveis para empresas de todos os tamanhos
             </Link>
             <Stack alignItems="center" spacing={2} />
 
@@ -280,7 +282,7 @@ export default function HomeHero() {
       <Stack spacing={3} sx={{ textAlign: 'center' }}>
         <m.div variants={varFade().in}>
           <Typography variant="overline" sx={{ opacity: 0.48 }}>
-            MINHAS SKILLS E POWER UP’S
+            TECNOLOGIAS QUE UTILIZAMOS
           </Typography>
         </m.div>
 
@@ -444,53 +446,6 @@ export default function HomeHero() {
               <Grid xs={12} md={6}>
                 {renderDescription}
               </Grid>
-
-              {/* <Grid md={6}>
-                <Stack
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="center"
-                  spacing={2}
-                  height="80%"
-                >
-                  <Box
-                    component="div"
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="100%"
-                      height="100%"
-                      viewBox="0 0 1000 1000"
-                    >
-                      <defs>
-                        <linearGradient id="P" gradientUnits="userSpaceOnUse" />
-                        <linearGradient
-                          id="g1"
-                          x2="1"
-                          href="#P"
-                          gradientTransform="matrix(-1116.535,467.737,-586.684,-1400.475,1232.527,682.213)"
-                        >
-                          <stop offset="0%" stopColor={PRIMARY_MAIN} />
-                          <stop offset="100%" stopColor={PRIMARY_DARK} />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="m-0.2 127.1h427.5c315 0 572.7 257.8 572.7 572.8v172.8h-427.4c-315 0-572.8-257.7-572.8-572.7z"
-                        fill="url(#g1)"
-                      />
-                      <path
-                        d="m631.7 741.6v-143.5l189.4 141.3v132.3l-2.3 1h-246.2c-140.6 0-269.7-51.4-369.7-136.2-31-60.4-46.8-135.8-46.8-226.2 0-232.1 117.3-351.5 314.3-381.5 135.2 10.2 257.7 67.8 350.7 156.2v62.6l-37.2-16.1c-62-26.8-127.7-38.9-195.1-38.9-151.1 0-238 60.6-238 217.7 0 154.1 64.6 238 223.1 238 19.2 0 38.7-2.6 57.8-6.7z"
-                        fill="#fff"
-                      />
-                    </svg>
-                  </Box>
-                </Stack>
-              </Grid> */}
-              {/* {mdUp && <Grid md={6}>{renderSlides}</Grid>} */}
             </Grid>
           </Container>
 
