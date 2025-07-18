@@ -26,7 +26,7 @@ const CARDS = [
   },
   {
     icon: '/assets/icons/home/ic_development.svg',
-    title: 'Soluções Fullstack sob medida',
+    title: 'Aplicativos, Sistemas e Web Apps sob Medida',
     description:
       'Desenvolvemos sistemas completos, seguros e escaláveis — da arquitetura back-end até a interface final. Utilizamos tecnologias modernas para atender com precisão as demandas do seu negócio.',
   },
